@@ -16,17 +16,19 @@ skills/
   finishing-a-development-branch/   verifiera -> välj integrationsväg -> städa
 ```
 
-Ingen `hooks/` och ingen `using-superpowers`-bootstrap här ännu — skills
-måste anropas explicit (`/skill-namn` eller att modellen själv känner igen
-situationen) tills en egen SessionStart-hook eller motsvarande läggs till.
+`hooks/hooks.json` kör `hooks/session-start` vid varje sessionsstart
+(startup/clear/compact). Skriptet injicerar en kort, strikt text som säger
+åt modellen att den MÅSTE använda en skill om den rimligen kan passa,
+innan den svarar eller agerar — samma mekanism som superpowers'
+`using-superpowers`, men utan separat meta-skill-fil att hålla i synk.
+Claude Code-specifikt: filen heter `session-start` utan `.sh`-ändelse för
+att undvika Claude Codes auto-bash-wrapping av `.sh`-kommandon på Windows.
 
 ## Nästa beslut
 
 - Döpa om pluginet och fylla i author/homepage i plugin.json
 - Bestämma om skills ska trimmas/anpassas efter eget arbetssätt eller
   behållas orörda
-- Lägga till en egen `hooks/hooks.json` om auto-trigger vid sessionsstart
-  önskas
 
 ## Attribution
 
