@@ -1,0 +1,6 @@
+{
+  "name": "own-skills",
+  "description": "Egna kärnskills: TDD, systematisk felsökning, verifiering, planering, brainstorming och branch-avslut",
+  "version": "0.1.0",
+  "license": "MIT"
+}
