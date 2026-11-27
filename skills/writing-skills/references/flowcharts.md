@@ -1,6 +1,6 @@
 # Flowcharts in Skills
 
-Part of superpowers:writing-skills.
+Part of own-skills:writing-skills.
 
 ## Flowchart Usage
 

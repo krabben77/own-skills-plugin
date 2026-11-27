@@ -60,3 +60,26 @@ försiktighet med nedladdningar. Beslut väntar på honom:
 
 - `using-superpowers`: samma jobb som `hooks/session-start`.
 - `diagnosing-superpowers`: felsöker superpowers själv.
+
+## Fler ändringar mot källan (hänvisningar)
+
+- `executing-plans/SKILL.md`: meningen som pekade på
+  `../using-superpowers/references/` borttagen (skillen finns inte hos oss).
+- `writing-skills/SKILL.md`: länkarna till `using-superpowers/references/codex-tools.md`
+  och `gemini-tools.md` ersatta med "skills ligger i `skills/<namn>/SKILL.md`".
+- Sökvägar som `docs/superpowers/plans/` och `.superpowers/sdd/` är orörda. De är
+  mappnamn i användarens projekt, inte hänvisningar till pluginet.
+
+## Fynd i en tidigare befintlig skill: `brainstorming`
+
+Hittat 2026-11-27 under granskningen. Ingår inte i intaget, men är viktigt:
+
+- `skills/brainstorming/scripts/server.cjs` (rad 105-112, 243-251) startar den
+  visuella följeslagaren (en lokal webbserver, bara om användaren tackat ja).
+  Sidan som visas hämtar en logotyp från
+  `https://primeradiant.com/brand/superpowers-visual-brainstorming-logo.png?v=<version>`.
+  Det är en förfrågan ut på nätet med versionsnumret, och den görs om inte
+  miljövariabeln `SUPERPOWERS_DISABLE_TELEMETRY` eller `DISABLE_TELEMETRY` är satt
+  till sant.
+- Beslut väntar på Niclas: stänga av det i koden, sätta variabeln, eller ta bort
+  den visuella följeslagaren helt.
