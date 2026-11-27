@@ -42,19 +42,17 @@ kommandot som ges.
   `writing-skills/references/flowcharts.md` som pekade på det ersatt med
   "visa flödesschemat som mermaid-diagram i svaret".
 - Hänvisningar `superpowers:` → `own-skills:` (se commit "Byt superpowers: mot own-skills:").
+- `using-git-worktrees/SKILL.md` steg 2: fråga först före installationer.
+- `brainstorming/scripts/server.cjs`: logotypen hämtas aldrig (se fyndet nedan).
 
-## Granska vid användning (text, inte skript)
+## Texter som kunde ladda ner eller radera (beslut 2026-11-27)
 
-Dessa instruktioner ligger kvar oförändrade, men Niclas har bett om
-försiktighet med nedladdningar. Beslut väntar på honom:
-
-- `using-git-worktrees/SKILL.md` steg 2 kör automatiskt `npm install`,
-  `pip install -r requirements.txt`, `poetry install`, `cargo build` och
-  `go mod download` i en ny arbetskopia. Det hämtar projektets egna beroenden
-  från paketregister, alltså kod från tredje part.
-- `subagent-driven-development/references/final-review.md` säger att
-  arbetsmappen ska raderas med `rm -rf <workspace>` efter slutgranskning.
-  Mappen ligger inuti projektet (`.superpowers/sdd/...`).
+- `using-git-worktrees/SKILL.md` steg 2 körde automatiskt `npm install`,
+  `pip install`, `poetry install`, `cargo build` och `go mod download`
+  (kod från tredje part). **Ändrat:** Claude frågar Niclas först och väntar på ja.
+- `subagent-driven-development/references/final-review.md` raderar arbetsmappen
+  `.superpowers/sdd/<plan>` med `rm -rf`. **Orört:** mappen ligger i projektet
+  och är tillfällig.
 
 ## Inte medtaget
 
@@ -70,16 +68,21 @@ försiktighet med nedladdningar. Beslut väntar på honom:
 - Sökvägar som `docs/superpowers/plans/` och `.superpowers/sdd/` är orörda. De är
   mappnamn i användarens projekt, inte hänvisningar till pluginet.
 
-## Fynd i en tidigare befintlig skill: `brainstorming`
+## Fynd i en tidigare befintlig skill: `brainstorming` (åtgärdat)
 
-Hittat 2026-11-27 under granskningen. Ingår inte i intaget, men är viktigt:
+Hittat 2026-11-27 under granskningen.
 
-- `skills/brainstorming/scripts/server.cjs` (rad 105-112, 243-251) startar den
-  visuella följeslagaren (en lokal webbserver, bara om användaren tackat ja).
-  Sidan som visas hämtar en logotyp från
-  `https://primeradiant.com/brand/superpowers-visual-brainstorming-logo.png?v=<version>`.
-  Det är en förfrågan ut på nätet med versionsnumret, och den görs om inte
-  miljövariabeln `SUPERPOWERS_DISABLE_TELEMETRY` eller `DISABLE_TELEMETRY` är satt
-  till sant.
-- Beslut väntar på Niclas: stänga av det i koden, sätta variabeln, eller ta bort
-  den visuella följeslagaren helt.
+- `skills/brainstorming/scripts/server.cjs` (den visuella följeslagaren, en lokal
+  webbserver, bara om Niclas tackat ja) hämtade en logotyp från
+  `https://primeradiant.com/brand/superpowers-visual-brainstorming-logo.png?v=<version>`
+  om inte `SUPERPOWERS_DISABLE_TELEMETRY` eller `DISABLE_TELEMETRY` var satt.
+  Det är en förfrågan ut på nätet med versionsnumret.
+- **Ändrat:** `SUPERPOWERS_TELEMETRY_DISABLED = true` (en rad plus kommentar), så
+  logotypen aldrig hämtas oavsett inställning.
+- **Verifierat:** servern startad med originalfilen och med vår, sidan hämtad
+  med giltig nyckel. Original: `<img src="https://primeradiant.com/...logo.png?v=7.0.2">`.
+  Vår: ingen `<img>` och ingen `primeradiant` i sidan. Märkningen visar
+  "vunknown" som version (utseende, ingen funktion).
+- Övrigt i `brainstorming`: inga andra utgående anrop (länken till GitHub är en
+  klickbar adress, WebSocket går till den egna datorn).
+

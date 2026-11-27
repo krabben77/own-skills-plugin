@@ -2,7 +2,7 @@
 
 Niclas egna Claude Code-plugin: en granskad bas av skills från
 `obra/superpowers` (MIT-licens) plus egna skills. Källa, version och
-skriptgranskning står i `KALLOR.md`.
+skriptgranskning står i `KALLOR.md`. Ändringar över tid: `CHANGELOG.md`.
 
 ## Struktur
 

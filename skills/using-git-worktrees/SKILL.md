@@ -101,7 +101,12 @@ cd "$path"
 
 ## Step 2: Project Setup
 
-Auto-detect and run appropriate setup:
+Detect which setup the project needs, but **do not run any install command
+until your human partner has said yes.** Install and build commands download
+third-party code from package registries (and run its install scripts). Name
+the command and the files that triggered it (for example "`npm install`,
+because there is a `package.json`"), ask once, and wait. If they decline,
+skip this step and say that tests may fail for missing dependencies.
 
 ```bash
 # Node.js
