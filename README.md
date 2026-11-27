@@ -1,7 +1,8 @@
 # own-skills
 
-Minimal Claude Code-plugin med de sex mest återanvändbara skills från
-`obra/superpowers` (MIT-licens), kopierade rakt av utan harness-beroenden.
+Niclas egna Claude Code-plugin: en granskad bas av skills från
+`obra/superpowers` (MIT-licens) plus egna skills. Källa, version och
+skriptgranskning står i `KALLOR.md`.
 
 ## Struktur
 
@@ -14,8 +15,17 @@ skills/
   verification-before-completion/   bevis före påstående om klart
   writing-plans/                plan för flerstegsuppgifter
   finishing-a-development-branch/   verifiera -> välj integrationsväg -> städa
+  writing-skills/               skriva och testa egna skills (lärmaterial för egna plugins)
+  executing-plans/              genomföra en plan i samma session
+  subagent-driven-development/  en ny hjälpare per uppgift + granskning
+  dispatching-parallel-agents/  flera oberoende uppgifter parallellt
+  requesting-code-review/       be om granskning av färdigt arbete
+  receiving-code-review/        ta emot granskning utan att blint följa den
+  using-git-worktrees/          isolerad arbetskopia för nytt arbete
   github-guide/                 eget: GitHub/git för Niclas, per app, hinderlogg
 ```
+
+Version 0.2.0: sex ursprungliga + sju intagna + en egen skill = 14 skills.
 
 `hooks/hooks.json` kör `hooks/session-start` vid varje sessionsstart
 (startup/clear/compact). Skriptet injicerar en kort, strikt text som säger
@@ -61,7 +71,7 @@ riktiga projekt visar behov. Inget laddas ner från community utan granskning
 `hooks/session-start`) och `diagnosing-superpowers` (felsöker superpowers
 själv).
 
-Design: `docs/specs/2026-11-27-egen-bas-design.md`.
+Design (godkänd 2026-11-27): `docs/specs/2026-11-27-egen-bas-design.md`. Plan: `docs/plans/2026-11-27-egen-bas-plan.md`.
 
 ## Nästa beslut
 

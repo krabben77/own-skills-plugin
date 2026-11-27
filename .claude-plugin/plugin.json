@@ -1,6 +1,6 @@
 {
   "name": "own-skills",
-  "description": "Egna kärnskills: TDD, systematisk felsökning, verifiering, planering, brainstorming och branch-avslut",
-  "version": "0.1.0",
+  "description": "Egen bas av granskade superpowers-skills (planering, TDD, felsökning, kodgranskning, delegering, worktrees, skill-skrivning) plus github-guide",
+  "version": "0.2.0",
   "license": "MIT"
 }

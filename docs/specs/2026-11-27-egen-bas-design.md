@@ -1,6 +1,6 @@
 # Design: egen bas av superpowers-skills
 
-Senast ändrat: 2026-11-27 · Status: utkast, väntar på Niclas godkännande
+Senast ändrat: 2026-11-27 · Status: godkänd av Niclas 2026-11-27
 
 ## Syfte och varför
 
