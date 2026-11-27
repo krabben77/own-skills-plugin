@@ -14,6 +14,7 @@ skills/
   verification-before-completion/   bevis före påstående om klart
   writing-plans/                plan för flerstegsuppgifter
   finishing-a-development-branch/   verifiera -> välj integrationsväg -> städa
+  github-guide/                 eget: GitHub/git för Niclas, per app, hinderlogg
 ```
 
 `hooks/hooks.json` kör `hooks/session-start` vid varje sessionsstart
